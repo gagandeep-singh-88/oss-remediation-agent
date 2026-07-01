@@ -86,8 +86,8 @@ def apply_dependency_management_override(repo_path: str, safe_updates: Dict[str,
     return "Dependency management constraints written successfully."
 
 def run_local_maven_build(repo_path: str) -> str:
-    """Runs 'mvn clean install' locally and captures logs."""
-    print("\n[Tool] Executing 'mvn clean install' locally...")
+    """Runs 'mvn clean test' locally and captures logs."""
+    print("\n[Tool] Executing 'mvn clean test' locally...")
     try:
         result = subprocess.run(
             ["mvn", "clean", "test"],
@@ -141,7 +141,7 @@ from google.genai import types
 
 async def main():
     # IMPORTANT: Update this to your actual local workspace path
-    target_workspace = "/Users/Gagan/eclipse-workspace/food-ordering-system" 
+    target_workspace = "/path/to/local/codebase"  # <-- Change this to your local Maven project path
     
     # Define identifiers cleanly
     app = "LocalRemediationApp"
